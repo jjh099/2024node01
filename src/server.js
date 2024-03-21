@@ -5,6 +5,7 @@ const app = express();
 
 const dotenv = require("dotenv");
 const { userRouter } = require("./routes/userRouter");
+const { blogRouter } = require("./routes/bolgRoiuter");
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const server = async function () {
 
     // user를 통으로 씀
     app.use("/user", userRouter);
+    app.use("/blog", blogRouter);
 
     // 3000번 포트 입력
     app.listen(3000);
